@@ -1,0 +1,129 @@
+#The function for telling all my cars in my company when a certain types of car is asked.
+#It will tell which car we have and the price of the car.
+#If there is no car available, it will print out "Sorry, We don't have this type of cars"
+def cars_have(country_car,car_type):
+    if country_car=="a" and car_type=="c":
+        return ("We have Bentley: Flying Spur and our price is $35000")
+        
+    if country_car=="b" and car_type=="c":
+        return ("We have Infiniti: G35 and our price is $5000")
+    
+    if country_car=="a" and car_type=="s":
+        return ("Sorry, We don't have this type of cars")
+        
+    if country_car=="b" and car_type=="s":
+        return ("We have Toyota: Camry and our price is $18000")
+    if country_car=="a" and car_type=="v":
+        return ("We have BMW:X5 and our price is $32000")
+    if country_car=="b" and car_type=="v":
+        return ("We have Infiniti: QX60 and our price is $24000")
+        
+#Here is the first test function for testing cars_have.
+#when the people choose the correct country of car and types of car, they should return the correct model of the car and the price.
+def test_cars_have():
+    assert callable(cars_have)
+    assert isinstance(cars_have("a","c"), str)
+    assert cars_have("a","c")=="We have Bentley: Flying Spur and our price is $35000"
+    assert cars_have("b","c")=="We have Infiniti: G35 and our price is $5000"
+    assert cars_have("a","s")=="Sorry, We don't have this type of cars"
+    assert cars_have("b","s")=="We have Toyota: Camry and our price is $18000"
+    assert cars_have("a","v")=="We have BMW:X5 and our price is $32000"
+    assert cars_have("b","v")=="We have Infiniti: QX60 and our price is $24000"
+test_cars_have()
+#Here is the function for recommodate cars for male customer. 
+#When there is the input of car types and country of car, using the function to return the recommonded car.
+def cars_model_male(country_car,car_type):
+    if country_car=="a" and car_type=="c":
+        return ("BMW:4 series, BMW:6 series, BMW:8 series, Mercedes-benz: CLA class, Mercedes-benz: CLS class, Mercedes-benz: C class coupe, Mercedes-benz: E class coupe, Mercedes-benz: S class coupe, Bentley: Flying Spur")
+    if country_car=="b" and car_type=="c":
+        return ("Lexus: RC350, Lexus: LC500, Infiniti: G35, Nissan: 370Z, Toyota: Supra")
+    if country_car=="a" and car_type=="s":
+        return ("BMW:3 series, BMW:5 series, Mercedes-benz: C class, Mercedes-benz: E class, Audi: A4, Audi: A6, Volkswagen: Passat")
+    if country_car=="b" and car_type=="s":
+        return ("Lexus: IS 300, Lexus: ES 350, Lexus: GS350, Infiniti: Q50, Infiniti: Q70, Acura: ILX, Honda: Civic, Honda: Accord, Toyota: Camry")
+    if country_car=="a" and car_type=="v":
+        return ("BMW:X3 series, BMW:X5 series, Mercedes-benz: GLC class, Mercedes-benz: GLE class, Audi: Q5, Audi: Q7, Volkswagen: Touareg")
+    if country_car=="b" and car_type=="v":
+        return ("Lexus: NX 200, Lexus: RX 350, Lexus: LX350, Infiniti: Qx50, Infiniti: Qx60, Acura: MDX, Honda: CR-V, Toyota: Highlander, Nissan: Armada")
+#Here is the second test. It will test the car recommdate for male customers.
+def test_cars_model_male():
+    assert callable(cars_model_male)
+    assert isinstance(cars_model_male("a","c"), str)
+    assert cars_model_male("b","c")=="Lexus: RC350, Lexus: LC500, Infiniti: G35, Nissan: 370Z, Toyota: Supra"
+    assert cars_model_male("a","s")=="BMW:3 series, BMW:5 series, Mercedes-benz: C class, Mercedes-benz: E class, Audi: A4, Audi: A6, Volkswagen: Passat"
+    assert cars_model_male("b","s")=="Lexus: IS 300, Lexus: ES 350, Lexus: GS350, Infiniti: Q50, Infiniti: Q70, Acura: ILX, Honda: Civic, Honda: Accord, Toyota: Camry"
+    assert cars_model_male("a","v")=="BMW:X3 series, BMW:X5 series, Mercedes-benz: GLC class, Mercedes-benz: GLE class, Audi: Q5, Audi: Q7, Volkswagen: Touareg"
+    assert cars_model_male("b","v")=="Lexus: NX 200, Lexus: RX 350, Lexus: LX350, Infiniti: Qx50, Infiniti: Qx60, Acura: MDX, Honda: CR-V, Toyota: Highlander, Nissan: Armada"
+test_cars_model_male()
+
+#Here is the function for recommodate cars for female customer. 
+#When there is the input of car types and country of car, using the function to return the recommonded car.
+def cars_model_female(country_car,car_type):
+    if country_car=="a" and car_type=="c":
+        return ("BMW:4 series, BMW:6 series, Mercedes-benz: CLA class, Mercedes-benz: C class coupe, Mercedes-benz: E class coupe")
+    if country_car=="b" and car_type=="c":
+        return ("Lexus: RC350, Lexus: LC500, Infiniti: Q60, Toyota: Supra")
+    if country_car=="a" and car_type=="s":
+        return ("BMW:3 series, BMW:5 series, Mercedes-benz: C class, Mercedes-benz: E class, Audi: A6")
+    if country_car=="b" and car_type=="s":
+        return ("Lexus: IS 300, Lexus: ES 350, Infiniti: Q50, Acura: ILX")
+    if country_car=="a" and car_type=="v":
+        return ("BMW:X3 series, BMW:X5 series, Mercedes-benz: GLC class, Mercedes-benz: GLE class, Audi: Q5")
+    if country_car=="b" and car_type=="v":
+        return ("Lexus: NX 200, Lexus: RX 350, Lexus: LX350, Infiniti: Qx50, Acura: MDX, Honda: CR-V, Toyota: Highlander, Toyota: River4")
+        
+        
+#Here is the Third test. It will test the car recommdate for female customers.
+def test_cars_model_female():
+    assert callable(cars_model_female)
+    assert isinstance(cars_model_female("a","c"), str)
+    assert cars_model_female("b","c")=="Lexus: RC350, Lexus: LC500, Infiniti: Q60, Toyota: Supra"
+    assert cars_model_female("a","s")=="BMW:3 series, BMW:5 series, Mercedes-benz: C class, Mercedes-benz: E class, Audi: A6"
+    assert cars_model_female("b","s")=="Lexus: IS 300, Lexus: ES 350, Infiniti: Q50, Acura: ILX"
+    assert cars_model_female("a","v")=="BMW:X3 series, BMW:X5 series, Mercedes-benz: GLC class, Mercedes-benz: GLE class, Audi: Q5"
+    assert cars_model_female("b","v")=="Lexus: NX 200, Lexus: RX 350, Lexus: LX350, Infiniti: Qx50, Acura: MDX, Honda: CR-V, Toyota: Highlander, Toyota: River4"
+test_cars_model_female()
+    
+    
+#Ask the customer to fill in their names.
+name = input ("Enter Your Name :") 
+
+#Ask the gender of the customer.
+gender = input("Enter Your Gender (Please Enter Male or Female only) : ") 
+while gender!= "Male" and gender!="Female":
+    print ("Error! Please Try Again!")
+    gender = input("Enter Your Gender (Please Enter Male or Female only) : ") 
+    
+#Ask which country's car the customer are is interested in
+country_car=input("Enter Which car do you like（Please enter a=Germany，b=Japanese only）:")
+while country_car!= "a" and country_car!="b":
+    print ("Error! Please Try Again!")
+    country_car=input("Enter Which car do you like（Please enter a=Germany，b=Japanese only）:")
+
+    
+#Ask which type the car the customer would like to have
+car_type=input("Enter Your favourate car type (Please enter c=Coupe,s=sendan，v=SUV only): ")
+while car_type!= "c" and car_type!="s" and car_type!="v":
+    print ("Error! Please Try Again!")
+    car_type=input("Enter Your favourate car type (Please enter c=Coupe,s=sendan，v=SUV only): ")
+
+
+#here is the function to call the recommodation functions
+def car_recommdate():
+    if gender==("Male"):
+        print("Here is"+" "+name+"'s " +"recommodation: ")
+        print(cars_model_male(country_car,car_type))
+    if gender==("Female"):
+        print("Here is"+" "+name+"'s " +"recommodation: ")
+        print(cars_model_female(country_car,car_type))
+
+#ask customer if they would like to see cars in my company
+see_car=input("Would you like to see cars in our company? press y/n: ")
+
+#show customer if they want and don't show if they dont want
+if see_car==("y"):
+    print("Cars we have: ")
+    print(cars_have(country_car,car_type))
+if see_car==("n"):
+    print("Thank you for visiting us!")
+    
